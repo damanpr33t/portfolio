@@ -4,7 +4,6 @@ $background-color: #242424;
 $dark-color: #000;
 $light-color: #dddddd;
 $bold: #38b6ff;
-$pointer: pointer;
 
 * {
     margin: 0;
@@ -73,11 +72,13 @@ body {
     margin: 0 auto;
     width: 100%;
     max-width: 1200px;
+    position: relative;
 }
 
 /* Landing Page */
 #landing__page {
     height: 100%;
+    position: relative;
     overflow: hidden;
 }
 .container{
@@ -92,7 +93,7 @@ header {
 }
 .bold {
     color: $bold;
-    cursor: $pointer;
+    cursor: pointer;
 }
 .header__title {
     font-weight: 700;
@@ -115,15 +116,24 @@ header {
     color: $bold;
     margin-left: 0.5rem;
 }
-.page__right {
+.button__container {
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    top: 30%;
+    z-index: 1;
 }
 .arrow {
-    animation: arrow infinite 1000ms alternate-reverse;
+    cursor: pointer;
 }
 .fa-arrow-right {
     font-size: 3rem;
+    animation: arrow infinite 1000ms alternate-reverse;
+}
+.fa-arrow-left {
+    font-size: 3rem;
+    animation: arrow infinite 1000ms alternate;
 }
 @keyframes arrow {
     0% {
@@ -133,3 +143,5 @@ header {
         transform: translateX(-10px)
     }
 }
+
+/* Projects Page */
