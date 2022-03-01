@@ -9,6 +9,7 @@
     <title>Damanpreet E-portfolio</title>
 </head>
 <body>
+    <span class="loading-text">0%</span>
     <!-- NAV Start -->
     <nav>
         <div class="logo__div">
@@ -17,7 +18,7 @@
         <ul>
             <li><a href="#landing__page">Home</a></li>
             <li><a href="#projects__page">Projects</a></li>
-            <li><a href="">Contact</a></li>
+            <li><a href="#">Contact</a></li>
             <li><a href="#"><i class="fas fa-adjust"></i></a></li>
         </ul>
     </nav>
@@ -25,38 +26,36 @@
 
     <!-- Landing Page Section -->
     <section id="landing__page" class="bg">
-        <div class="container">
-            <div class="row">
-                <header>
-                    <div class="landing__page--wrapper">
-                        <h1 class="header__title bg">Hello,</h1>
-                        <h1 class="header__name bg">I'm Daman <span class="loading-text">0%</span></h1>
-
-                        <p class="header__para">
-                            I'm a Canadian <b class="bold">Freelance Frontend Developer</b> and I like to make 
-                            web apps with great user experience, professional design, and best practices.
-                            <br/>
-                            Here's a bit more <b class="bold">about me</b>.
-                        </p>
-                        <div class="social__links">
-                            <a class="social__link" href="https://www.linkedin.com/in/damanpreet-singh-178716217/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                            <a class="social__link" href="https://github.com/damanpr33t" target="_blank"><i class="fa-brands fa-github"></i></a>
-                            <a class="social__link" href="./assets/resume__damanpreet-s.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i></a>
-                        </div>
-                        <div class="scroll">
-                            <a href="#projects__page" class="scroll__icon"><i class="fa-solid fa-angles-down"></i></a>
-                        </div>
-                    </div>
-                </header>
+        <!-- Main Content Start -->
+        <header class="header">
+            <div class="landing__page--wrapper">
+                <h1 class="header__title">Hello,</h1>
+                <h1 class="header__name">I'm Damanpreet</h1>
+                <p class="header__para">
+                    I'm a Canadian <b class="bold">Freelance Frontend Developer</b> and I like to make 
+                    web apps with great user experience, professional design, and best practices.
+                    <br/>
+                    Here's a bit more <b class="bold">about me</b>.
+                </p>
+                <div class="social__links">
+                    <a class="social__link" href="https://www.linkedin.com/in/damanpreet-singh-178716217/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a class="social__link" href="https://github.com/damanpr33t" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a class="social__link" href="./assets/resume__damanpreet-s.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i></a>
+                </div>
+                <div class="scroll">
+                    <a href="#projects__page" class="scroll__icon"><i class="fa-solid fa-angles-down"></i></a>
+                </div>
             </div>
-        </div>
+        </header>
+        <!-- Main Content End -->
     </section>
     <!-- Landing Page Section End -->
 
     <!-- Project Page Section -->
-    <section id="projects__page">
+    <section id="projects__page" class="bg">
         <div class="container">
             <div class="row">
+                <h1 class="page__title">Some of my <b class="bold">Projects</b></h1>
                 <div class="project__wrapper">
                     <div class="project__description">
                         <div class="project__wrapper--bg"></div>

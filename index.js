@@ -8,14 +8,7 @@ slides.forEach(function(slide, index) {
 })
 
 let counter = 0
-nextBtn.addEventListener("click", function() {
-    counter ++
-    Carousel()
-})
-prevBtn.addEventListener("click", function() {
-    counter--
-    Carousel()
-})
+
 function Carousel() {
     if(counter == slides.length) {
         counter = 0
@@ -33,7 +26,7 @@ const bg = document.querySelector('.bg');
 
 let load = 0
 
-let int = setInterval(blurring, 30)
+let int = setInterval(blurring, 7)
 
 function blurring() {
     load++
