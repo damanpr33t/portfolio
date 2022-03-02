@@ -3,6 +3,54 @@ const slides = document.querySelectorAll('.slide')
 const nextBtn = document.querySelector('.fa-arrow-right')
 const prevBtn = document.querySelector('.fa-arrow-left')
 
+const projectsArr = {
+    projectOne: [
+        img1 = './assets/projects/axion/img1.png',
+        img2 = './assets/projects/axion/img2.png',
+        img3 = './assets/projects/axion/img3.png', 
+    ],
+
+    projectTwo: [
+        img1 = '',
+        img2 = '',
+        img3 = '',
+    ],
+
+    projectThree: [
+        img1 = '',
+        img2 = '',
+        img3 = '',
+    ],
+
+    projectFour: [
+        img1 = '',
+        img2 = '',
+        img3 = '',
+    ],
+
+    projectFive: [
+        img1 = '',
+        img2 = '',
+        img3 = '',
+    ],
+
+    projectSix: [
+        img1 = '',
+        img2 = '',
+        img3 = '',
+    ]
+}
+
+ let i = 0;
+function Slides() {
+    const projectOneBackground = document.querySelector('.project__img')
+    projectOneBackground.src = projectsArr.projectOne.img[i]
+    i++
+    if(i > 3) {
+        i = 0;
+    }
+}
+
 slides.forEach(function(slide, index) {
     slide.style.left = `${index * 100}%`
 })

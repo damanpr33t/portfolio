@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+img {
+    width: 100%;
+}
+a {
+    text-decoration: none;
+    color: $light-color;
+}
+body {
+    background-color: $background-color;
+    line-height: 1.6;
+    margin: 0 auto;
+    width: 100%;
+}
+.bold {
+    color: $bold;
+    cursor: pointer;
+}
+.container {
+    margin: 3rem 0;
+}
+.row {
+    padding: 0 50px;
+}
+::-webkit-scrollbar {
+    width: 1.5em;
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0.25em grey;
+    border-radius: 0.5em;
+}
+::-webkit-srollbar-thumb {
+    background: #38b6ff;
+    border-radius: 0.5em;
+}
