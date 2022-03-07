@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/bf2167cafc.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Damanpreet E-portfolio</title>
 </head>
@@ -18,10 +19,19 @@
         <ul>
             <li><a href="#landing__page" class="nav__link">Home</a></li>
             <li><a href="#projects__page" class="nav__link">Projects</a></li>
-            <li><a href="#" class="nav__link">Contact</a></li>
-            <li><a href="#"><i class="fas fa-adjust"></i></a></li>
+            <li><a href="#" class="nav__link" onclick="toggleModal()">Contact</a></li>
+            <li><a href="#"><i class="fas fa-adjust" onclick="toggleDark()"></i></a></li>
             <li><i class="fa-solid fa-bars"></i></li>
         </ul>
+
+        <aside class="sidebar">
+            <div class="sidebar__header">
+                <i class="fa-solid fa-circle-xmark click"></i>
+                <ul class="sidebar__list">
+                    <li class="sidebar__link"><a href="#">About</a></li>
+                </ul>
+            </div>
+        </aside>
     </nav>
     <!-- NAV End -->
 
@@ -39,9 +49,9 @@
                     Here's a bit more <b class="bold">about me</b>.
                 </p>
                 <div class="social__links">
-                    <a class="social__link" href="https://www.linkedin.com/in/damanpreet-singh-178716217/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                    <a class="social__link" href="https://github.com/damanpr33t" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a class="social__link" href="./assets/resume__damanpreet-s.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i></a>
+                    <a class="social__link click" href="https://www.linkedin.com/in/damanpreet-singh-178716217/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a class="social__link click" href="https://github.com/damanpr33t" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a class="social__link click" href="./assets/resume__damanpreet-s.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i></a>
                 </div>
                 <div class="scroll">
                     <a href="#projects__page" class="scroll__icon"><i class="fa-solid fa-angles-down"></i></a>
@@ -49,8 +59,77 @@
             </div>
         </header>
         <!-- Header Content End -->
+
+        <!-- Modal Start -->
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title">Here's a bit more about me</h3>
+                <h4 class="modal__sub-title">Freelance Frontend Developer</h4>
+                <p class="modal__para">
+                    I'm a Canadian <b class="bold">freelance frontend developer</b>
+                    with a strong passion for developing <b class="bold">responsive</b> 
+                    website/web-apps with great <b class="bold">user experience</b>.
+                    <br>
+                    I'm currently improving my JavaScript and React skills while also keeping
+                    and open mind towards other languages and new technologies such as blockchain.
+                    I would have a lot to learn and on the long journey ahead I would like to learn
+                    as much as I can to keep my skills up to date. I learn from a discord group 
+                    consisting of some of the most <b class="bold">talented</b> and <b class="bold">experienced</b> 
+                    software engineers around the world.
+                </p>
+                <div class="modal__languages">
+                    <div class="modal__language">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original-wordmark.svg" />
+                    </div>
+                    <div class="modal__language">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original-wordmark.svg" />
+                    </div>
+                    <div class="modal__language">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" />
+                    </div>
+                    <div class="modal__language">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fa-solid fa-circle-xmark click" onclick="toggleModal()"></i>
+                <h3 class="modal__title">Let's Talk!</h3>
+                <h4 class="modal__sub-title">I'm open to work. I would love to hear from you.</h4>
+                <form action="" id="contact__form">
+                    <div class="form__item">
+                        <label for="" class="form__item--label">Name</label>
+                        <input type="text" class="input" name="sender_name" required>
+                    </div>
+                    <div class="form__item">
+                        <label for="" class="form__item--label">Email</label>
+                        <input type="email" class="input" name="sender_email" required>
+                    </div>
+                    <div class="form__item">
+                        <label for="" class="form__item--label">Message</label>
+                        <textarea name="message" type="text" placeholder="pssst...drag from bottom right corner to adjust in case you need more room" class="input" required></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit send__btn" onclick="Contact()">Send</button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fa-solid fa-spinner-third"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    <i class="fa-solid fa-check"></i>
+                    Thanks for the message! Looking forward to speaking to you soon.
+                </div>
+            </div>
+        </div>
+        <!-- Modal End -->
     </section>
     <!-- Landing Page Section End -->
+
+
+    <a href="#">
+        <button class="mail__btn click" onclick="toggleModal()">
+            <i class="fa-solid fa-paper-plane"></i>
+        </button>
+    </a>
 
     <!-- Project Page Section -->
     <section id="projects__page" class="bg">

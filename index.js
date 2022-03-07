@@ -41,7 +41,7 @@ const projectsArr = {
     ]
 }
 
- let i = 0;
+let i = 0;
 function Slides() {
     const projectOneBackground = document.querySelector('.project__img')
     projectOneBackground.src = projectsArr.projectOne.img[i]
@@ -69,12 +69,11 @@ function Carousel() {
     })
 }
 
+/* ================ Blurry Loading ===================== */
 const loadText = document.querySelector('.loading-text');
 const bg = document.querySelector('.bg');
-
-let load = 0
-
 let int = setInterval(blurring, 7)
+let load = 0
 
 function blurring() {
     load++
@@ -82,7 +81,6 @@ function blurring() {
     if(load > 99) {
         clearInterval(int)
     }
-
 
     loadText.innerText = `${load}%`
     loadText.style.opacity = scale(load, 0, 100, 1, 0)
@@ -93,3 +91,39 @@ function blurring() {
 const scale = (num, in_min, in_max, out_min, out_max) => {
     return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
+/* ============= Blurry Loading End ================== */
+
+/* ===== Toggle Modal ======== */
+function toggleModal() {
+    document.body.classList.toggle("toggle--modal")
+}
+/* ===== Toggle Modal End ====== */
+
+/* ========= Send email button on modal ========== */
+function Contact(event) {
+    event.preventDefault();
+    const loading = document.querySelector('.modal__overlay--loading')
+    const success = document.querySelector('.modal__overlay--success')
+    loading.classList.add('modal__overlay--visible')
+    emailjs.sendform(
+        'service_gd0vyta',
+        'template_9jek4bq',
+        event.target,
+        'user_VqSnwwutoSTNCLs6RtQpW'
+    ).then(() => {
+        loading.classList.remove('modal__overlay--visible')
+        success.classList.add('modal__overlay--visible')
+    }).catch(() => {
+        loading.classList.remove('modal__overlay--visible')
+        alert(
+            "Apologies for the inconvenience. The email service is temporarily unavailable. Please contact me directly at daman0797@gmail.com"
+        )
+    })
+}
+/* ====== Send Email End ============= */
+
+/* =========== Toggle Dark Mode ========== */
+function toggleDark() {
+    document.body.classList.toggle("dark-mode")
+}
+/* =========== Toggle Dark Mode End ========== */
