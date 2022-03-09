@@ -2,621 +2,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 @import 'config';
 @import 'utilities';
-/* # Global Styles End # */
+@import 'nav';
+@import 'modal';
+@import 'landingPage';
+@import 'projectsPage';
+@import 'footer';
+@import 'mediaQueries';
 
-/* # Navigation # */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 15vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9999;
-    background-color: $background-color;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+.dark-mode nav {
+    background-color: $dark-color;
 
-    .logo__div {
-        width: 100px;
-        height: 100px;
-        margin: 1em;
-    }
-
-    ul {
-        display: flex;
-        list-style-type: none;
-    }
-
-    li {
-        padding: 0.75em;
-    }
-
-    a {
-        font-weight: 500;
-        font-size: 1em;
-        position: relative;
-    }
-
-    a::after {
-        /* Underline goes to the right 0 and width 0 when not hovering */
-        content: "";
-        position: absolute;
-        bottom: -3px;
-        height: 3px;
-        width: 0;
-        right: 0;
-        background-color: $light-color;
-        transition: all 300ms ease;
-    }
-
-    a:hover::after {
-        /* Underline goes to the left 0 and width 100% smoothly via transition */
-        left: 0;
-        width: 100%;
-    }
-
-    .fa-bars {
-        display: none;
-    }
-}
-// SideBar //
-.sideNav {
-    height: 100%;
-    width: 0; // initial width set to 0 changed with JavaScript
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    background-color: $background-color;
-    overflow-x: hidden;
-    padding-top: 6em;
-    transition: 0.5s ease;
-}
-.sideNav a {
-    padding: 1em;
-    display: block;
-    text-align: center;
-    transition: 0.3s ease;
-}
-.sideNav .close__btn {
-    position: absolute;
-    top: 1em;
-    right: 1em;
-}
-/* # End of Navigation # */
-
-/* Modal Start */
-.modal {
-    width: 100%;
-    max-width: 1200px;
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 20px;
-    overflow: hidden; // stop horizontal scroll
-    // Hide modal by default //
-    visibility: hidden;
-    z-index: -1;
-    transition: visibility 1s, z-index 1s, box-shadow 0.5s ease;
-}
-.toggle--modal .modal {
-    z-index: 60;
-    box-shadow: 0 20px 80px 0 rgba(0, 0, 0, 0.5);
-    visibility: visible;
-}
-.toggle--modal nav,
-.toggle--modal .header,
-.toggle--modal .scroll {
-    opacity: 0;
-    visibility: hidden;
-    transition: all 450ms ease;
-}
-.modal__half {
-    width: 50%;
-    padding: 2em 3em;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    transition: all 300ms ease-in-out;
-}
-.modal__about {
-    background-color: #ECF0F1;
-    transform: translateX(-110%); // keep off screen to the left
-}
-.modal__contact {
-    background-color: #E5E7E9;
-    transform: translateX(110%); // keep off screen to the right
-}
-.toggle--modal .modal__about,
-.toggle--modal .modal__contact {
-    transform: translateX(0%);
-}
-.modal__title {
-    font-size: 2em;
-}
-.modal__sub-title {
-    margin: 1em 0 1.5em 0;
-    font-size: 1.2em;
-}
-.modal__para {
-    margin-bottom: 1.5em;
-    line-height: 1.75;
-}
-.modal__languages {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-}
-.modal__language {
-    width: 2em;
-    height: 2em;
-    transition: all 300ms ease;
-}
-.modal__language:hover {
-    transform: scale(0.9);
-    filter: brightness(90%);
-}
-// =========== Contact Half ==========
-#contact__form {
-    background-color: #E5E7E9;
-}
-.form__item {
-    margin-bottom: 1em;
-    display: flex;
-    flex-direction: column;
-}
-.form__item--label {
-    font-weight: 500;
-}
-.form__submit {
-    outline: none;
-    color: $background-color;
-    font-weight: 700;
-    width: 100%;
-    max-width: 240px;
-    padding: 0.5em;
-    font-size: 1.5em;
-    text-transform: uppercase;
-    position: relative;
-    cursor: pointer;
-    border-radius: 0.25em;
-}
-.send__btn {
-    background-color: $bold;
-    box-shadow: 0 5px 0 #2874A6;
-}
-.form__submit:active {
-    box-shadow: none;
-    top: 5px;
-}
-// ====== Modal Contact Half End ============
-
-// ====== Modal overlay ====
-.modal__overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: -1;
-}
-.modal__overlay--loading {
-    // loading spinner //
-    background-color: #E5E7E9;
-    font-size: 4em;
-}
-.modal__overlay--success {
-    // success message after loading spinner //
-    display: flex;
-    flex-direction: column;
-    font-size: 1.5em;
-    font-weight: 700;
-    text-align: center;
-    padding: 2em;
-}
-.modal__overlay--visible {
-    z-index: 1;
-    display: flex;
-}
-.fa-circle-xmark {
-    position: absolute;
-    top: 1em;
-    right: 1.5em;
-    color: $dark-color;
-    font-size: 2.5em;
-    z-index: 100;
-}
-.fa-spinner-third {
-    animation: spin 750ms infinite;
-}
-@keyframes spin {
-    0% {
-        transform: rotate(0);
-    }
-    100% {
-        transform: rotate(360deg)
-    }
-}
-/* Modal End */
-
-/* Landing Page Start */
-.mail__btn {
-    width: 2em;
-    height: 2em;
-    font-size: 1.5em;
-    border-radius: 50%;
-    border: $bold;
-    background-color: $bold;
-    position: fixed;
-    bottom: 1em;
-    right: 1.5em;
-    z-index: 100;
-    box-shadow: 0 12px 30px 0 rgba(0, 0, 0, 0.5);
-}
-.click {
-    cursor: pointer;
-    transition: all 300ms ease;
-}
-.click:hover {
-    transform: scale(1.1);
-}
-.click:active {
-    transform: scale(0.8);
-}
-#landing__page {
-    min-height: 100vh;
-}
-/* Loading State Blur */
-.bg {
-    filter: blur(0px);
-}
-.loading-text {
-    color: $light-color;
-    font-size: 50px;
-}
-/* ------------------ */
-.header,
-.loading-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 0 1em;
-    height: 400px;
-}
-.header__title {
-    font-weight: 700;
-    font-size: 70px;
-    color: $light-color;
-    text-shadow: 2px 2px rgba(255, 255, 255, 0.5);
-    position: relative;
-
-    div {
-        height: 1.75em;
-        width: 2.75em;
-        background-color: $bold;
-        border-radius: 65% 0 65% 0 / 100%;
-        position:absolute;
-        top: 1%;
-        left: 5%;
-        z-index: -1;
-    }
-}
-.header__name {
-    color: $bold;
-    font-weight: 700;
-    font-size: 70px;
-    text-align: center;
-    text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
-    position: relative;
-    padding-left: 14px;
-
-    div {
-        height: 1.75em;
-        width: 4.75em;
-        background-color: $light-color;
-        border-radius: 0 50% 0 50% / 100%;
-        position:absolute;
-        top: 1%;
-        left: 10%;
-        z-index: -2;
-    }
-}
-.header__para {
-    font-weight: 500;
-    color: $light-color;
-    font-size: 24px;
-    margin: 1em 0;
-    line-height: 2;
-    text-align: center;
-}
-.social__links {
-    margin-top: 1em;
-    display: flex;
-    justify-content: center;
-}
-.social__link {
-    font-size: 2rem;
-    color: $bold;
-    margin: 0 0.5em;
-    justify-content: center;
-}
-/* Animate the down arrows */
-.scroll {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10vh;
-    margin: 2em 0;
-}
-.scroll__icon {
-    font-size: 1.5em;
-    animation: scroll 2s infinite alternate-reverse;
-}
-@keyframes scroll {
-    0% {
-        transform: translateY(10px);
-    }
-    100% {
-        transform: translateY(-10px);
-    }
-}
-/* Landing Page End */
-
-/* Projects Page Start */
-.project__wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Split columns into 1 fraction and repeat 3 times to get 3 columns */
-    grid-gap: 1.5em;
-    grid-auto-rows: minmax(100px, auto); /* Min row height 100px and auto increase if needed */
-    place-content: center;
-}
-.page__title {
-    font-size: 48px;
-    color: $light-color;
-    text-align: center;
-    margin-bottom: 2.5em;
-}
-.project__description {
-    transition: all 1000ms ease;
-}
-.project__description:hover .project__img {
-    // scale 7%
-    transform: scale(1.07);
-    filter: blur(5px);
-}
-.project__description--wrapper {
-    position: relative; // .description
-    box-shadow: 0 20px 32px 0 rgba(0, 0, 0, 0.5);
-    border-radius: 0.5em;
-    overflow: hidden;
-}
-.project__description--wrapper:hover .description {
-    opacity: 1;
-    transform: translateY(-50%);
-}
-.description {
-    position: absolute; // .project__description--wrapper
-    top: 50%;
-    transform: translateY(100%); // set text down lower as default
-    opacity: 0; // make invisible as default
-    transition: opacity 700ms ease-in-out, transform 700ms ease;
-    text-align: center;
-}
-.project__description--wrapper:hover .project__description--bg {
-    // Tint the background while hovering so the text can be readable
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to left top, #ddd, $bold, #242424);
-    opacity: 0.2;
-}
-.project__title {
-    font-size: 22px;
-}
-.project__sub-title {
-    margin: 0.5em 0;
-    font-size: 14px;
-    color: $bold;
-}
-.project__para {
-    padding: 0 1em;
-    font-size: 14px;
-}
-.project__links {
-    margin-top: 0.5em;
-    i {
-        color: $bold;
-        font-size: 20px;
-        margin: 0 0.5em;
-    }
-}
-/* Project Page End */
-
-/* Footer Start */
-footer {
-    margin-top: 8em;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
-
-    .row {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer__logo {
-        width: 100px;
-        height: 100px;
-        margin: 2em;
-    }
-
-    .footer__list {
-        margin-bottom: 2em;
-    }
-
-    a {
-        font-weight: 500;
-        font-size: 1em;
-        position: relative;
-        margin: 0 1em;
-    }
-
-    a::after {
-        /* Underline goes to the right 0 and width 0 when not hovering */
-        content: "";
-        position: absolute;
-        bottom: -3px;
-        height: 3px;
-        width: 0;
-        right: 0;
-        background-color: $light-color;
-        transition: all 300ms ease;
-    }
-
-    a:hover::after {
-        /* Underline goes to the left 0 and width 100% smoothly via transition */
-        left: 0;
-        width: 100%;
-    }
-
-    .copyright {
-        margin: 1em 0;
-    }
-
-    .copyright__para {
-        font-size: 1em;
-        font-weight: 400;
-        color: #ccc;
-    }
-}
-/* Footer End */
-
-/* Media Queries */
-@media(max-width: 1200px) {
-    .header__title,
-    .header__name {
-        font-size: 50px;
-    }
-    .header__para {
-        font-size: 22px;
-    }
-    .page__title {
-        font-size: 38px;
-    }
-    .project__title {
-        font-size: 20px;
-    }
-    .project__sub-title {
-        margin: 0;
-    }
-    .project__para {
-        font-size: 12px;
-    }
-    .project__links {
-        margin: 0 0.25em;
-    }
-}
-
-@media(max-width: 1024px) {
-    .header__title,
-    .header__name {
-        font-size: 40px;
-    }
-    .header__para {
-        font-size: 18px;
-    }
-    .page__title {
-        font-size: 32px;
-    }
-    .project__wrapper {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media(max-width: 768px) {
-    .header__title,
-    .header__name {
-        font-size: 26px;
-    }
-    .header__para {
-        font-size: 16px;
-    }
-    .page__title {
-        font-size: 26px;
-    }
-    .project__wrapper {
-        grid-template-columns: repeat(1, 1fr);
-    }
-    .footer__list {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .footer__link {
-        margin: 1em 0;
-    }
-}
-
-@media(max-width: 480px) {
+    i,
     .nav__link {
-        display: none;
+        color: $darkMode-font;
     }
-    nav .fa-bars {
-        display: inline;
-        font-size: larger;
-        cursor: pointer;
-    }
-    nav .fa-bars:hover {
-        transform: scale(1.07);
-    }
-    .header__title,
-    .header__name {
-        font-size: 22px;
-    }
-    .page__title {
-        font-size: 22px;
-    }
-    .project__title {
-        font-size: 16px;
-    }
-    .project__sub-title {
-        display: none;
-    }
-    .project__links {
-        margin: 0;
-        font-size: 16px;
-    }
-    footer .copyright__para {
-        font-size: 0.5em;
+    a::after {
+        background-color: $darkMode-font;
     }
 }
-
-@media(max-width: 320px) {
-    nav {
-        flex-direction: column;
-        height: 20vh;
-    }
-    .header__title,
-    .header__name {
-        font-size: 16px;
-    }
-    .header__title {
-        text-shadow: 1px 1px rgba(255, 255, 255, 0.5);
-    }
-    .header__name {
-        text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
-    }
-    .header__para {
-        font-size: 14px;
+.footer__logo--dark,
+.dark__logo,
+.dark-mode .light__logo,
+.dark-mode .footer__logo--light {
+    display: none;
+}
+.dark-mode .footer__logo--dark,
+.dark-mode .dark__logo {
+    display: block;
+}
+.dark-mode #landing__page {
+    background-color: $dark-color;
+}
+.dark-mode .header__name {
+    text-shadow: 2px 2px rgba(255, 255, 255, 0.5);
+    div {
+        background-color: $darkMode-font;
     }
 }
+.dark-mode .modal__title,
+.dark-mode .modal__sub-title,
+.dark-mode .modal__para,
+.dark-mode .form__item--label,
+.dark-mode .sideNav a,
+.dark-mode .footer__link,
+.dark-mode .page__title,
+.dark-mode .header__para,
+.dark-mode .header__title,
+.dark-mode .scroll__icon {
+    color: $darkMode-font;
+}
+.dark-mode .header__title {
+    text-shadow: 1px 2px rgba(0, 0, 0, 0.5);
+}
+.dark-mode #contact__form,
+.dark-mode .modal__contact {
+    background-color: $light-color;
+}
+.dark-mode .modal__about,
+.dark-mode .sideNav,
+.dark-mode body,
+.dark-mode .container,
+.dark-mode .row,
+.dark-mode #projects__page {
+    background-color: $dark-color;
+}
+.dark-mode footer {
+    a::after {
+        background-color: $darkMode-font;
+    }
+}
+.dark-mode .copyright__para {
+    color: $light-color;
+}
+/* # Global Styles End # */

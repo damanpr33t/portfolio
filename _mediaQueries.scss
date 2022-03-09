@@ -1,0 +1,119 @@
+/* Media Queries */
+@media(max-width: 1200px) {
+    .header__title,
+    .header__name {
+        font-size: 50px;
+    }
+    .header__para {
+        font-size: 22px;
+    }
+    .page__title {
+        font-size: 38px;
+    }
+    .project__title {
+        font-size: 20px;
+    }
+    .project__sub-title {
+        margin: 0;
+    }
+    .project__para {
+        font-size: 12px;
+    }
+    .project__links {
+        margin: 0 0.25em;
+    }
+}
+
+@media(max-width: 1024px) {
+    .header__title,
+    .header__name {
+        font-size: 40px;
+    }
+    .header__para {
+        font-size: 18px;
+    }
+    .page__title {
+        font-size: 32px;
+    }
+    .project__wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 768px) {
+    .header__title,
+    .header__name {
+        font-size: 26px;
+    }
+    .header__para {
+        font-size: 16px;
+    }
+    .page__title {
+        font-size: 26px;
+    }
+    .project__wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .footer__list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer__link {
+        margin: 1em 0;
+    }
+}
+
+@media(max-width: 480px) {
+    .nav__link {
+        display: none;
+    }
+    nav .fa-bars {
+        display: inline;
+        font-size: larger;
+        cursor: pointer;
+    }
+    nav .fa-bars:hover {
+        transform: scale(1.07);
+    }
+    .header__title,
+    .header__name {
+        font-size: 22px;
+    }
+    .page__title {
+        font-size: 22px;
+    }
+    .project__title {
+        font-size: 16px;
+    }
+    .project__sub-title {
+        display: none;
+    }
+    .project__links {
+        margin: 0;
+        font-size: 16px;
+    }
+    footer .copyright__para {
+        font-size: 0.5em;
+    }
+}
+
+@media(max-width: 320px) {
+    nav {
+        flex-direction: column;
+        height: 20vh;
+    }
+    .header__title,
+    .header__name {
+        font-size: 16px;
+    }
+    .header__title {
+        text-shadow: 1px 1px rgba(255, 255, 255, 0.5);
+    }
+    .header__name {
+        text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+    }
+    .header__para {
+        font-size: 14px;
+    }
+}
