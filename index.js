@@ -93,6 +93,12 @@ const scale = (num, in_min, in_max, out_min, out_max) => {
 }
 /* ============= Blurry Loading End ================== */
 
+/** Toggle Sidebar */
+function toggleSidebar() {
+    document.body.classList.toggle('show--sidebar')
+}
+/** Toggle Sidebar End */
+
 /* ===== Toggle Modal ======== */
 function toggleModal() {
     document.body.classList.toggle("toggle--modal")
@@ -127,3 +133,27 @@ function toggleDark() {
     document.body.classList.toggle("dark-mode")
 }
 /* =========== Toggle Dark Mode End ========== */
+
+/** Toggle Sidebar */
+function openSideNav() {
+    document.getElementById("sideNav").style.width = "100%";
+}
+
+function closeSideNav() {
+    document.getElementById("sideNav").style.width = "0";
+}
+/** Toggle Sidebar End */
+
+
+// palindrome question 
+function palindrome(str) {
+    str = str.toLowerCase()
+    return str === str.split("").reverse().join("")
+}
+console.log(palindrome("kaya"))
+// or
+const palin = str => {
+    str = str.toLowerCase()
+    console.log(str === str.split("").reverse().join(""))
+}
+palin("anna")

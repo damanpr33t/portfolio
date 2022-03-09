@@ -21,17 +21,20 @@
             <li><a href="#projects__page" class="nav__link">Projects</a></li>
             <li><a href="#" class="nav__link" onclick="toggleModal()">Contact</a></li>
             <li><a href="#"><i class="fas fa-adjust" onclick="toggleDark()"></i></a></li>
-            <li><i class="fa-solid fa-bars"></i></li>
+            <li><i class="fa-solid fa-bars" onclick="openSideNav()"></i></li>
         </ul>
 
-        <aside class="sidebar">
-            <div class="sidebar__header">
-                <i class="fa-solid fa-circle-xmark click"></i>
-                <ul class="sidebar__list">
-                    <li class="sidebar__link"><a href="#">About</a></li>
+            <div class="sideNav" id="sideNav">
+                <i class="fa-solid fa-circle-xmark click close__btn" onclick="closeSideNav()"></i>
+                    <a href="#">About</a>
+                    <a href="#">Projects</a>
+                    <a href="#">Contact</a>
+                    <a href="#"><i class="fas fa-adjust" onclick="toggleDark()"></i></a>
+                    <a class="sidebar__social--link" href="https://www.linkedin.com/in/damanpreet-singh-178716217/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <a class="sidebar__social--link" href="https://github.com/damanpr33t" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a class="sidebar__social--link" href="./assets/resume__damanpreet-s.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i></a>
                 </ul>
             </div>
-        </aside>
     </nav>
     <!-- NAV End -->
 
