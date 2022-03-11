@@ -42,7 +42,7 @@ input, textarea {
     transition: all 300ms ease;
 }
 input:hover, textarea:hover {
-    border-color: #242424;
+    border-color: lightblue;
 }
 input:focus, textarea:focus {
     border-color: $bold;

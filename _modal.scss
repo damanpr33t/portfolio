@@ -16,10 +16,12 @@
     transition: visibility 1s, z-index 1s, box-shadow 0.5s ease;
 }
 .toggle--modal .modal {
-    z-index: 60;
+    z-index: 100;
     box-shadow: 0 20px 80px 0 rgba(0, 0, 0, 0.5);
     visibility: visible;
 }
+.toggle--modal .page__title,
+.toggle--modal .project__wrapper,
 .toggle--modal nav,
 .toggle--modal .header,
 .toggle--modal .scroll {
@@ -96,6 +98,7 @@
     position: relative;
     cursor: pointer;
     border-radius: 0.25em;
+    // transition: all 300ms ease;
 }
 .send__btn {
     background-color: $bold;
@@ -121,11 +124,12 @@
 }
 .modal__overlay--loading {
     // loading spinner //
-    background-color: #E5E7E9;
+    background-color: $bold;
     font-size: 4em;
 }
 .modal__overlay--success {
     // success message after loading spinner //
+    background-color: #E5E7E9;
     display: flex;
     flex-direction: column;
     font-size: 1.5em;
@@ -134,7 +138,7 @@
     padding: 2em;
 }
 .modal__overlay--visible {
-    z-index: 1;
+    z-index: 1000;
     display: flex;
 }
 .fa-circle-xmark {
@@ -143,7 +147,7 @@
     right: 1.5em;
     color: $dark-color;
     font-size: 2.5em;
-    z-index: 100;
+    z-index: 1001;
 }
 .fa-spinner-third {
     animation: spin 750ms infinite;

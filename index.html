@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/bf2167cafc.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_VqSnwwutoSTNCLs6RtQpW");
+        })();
+    </script>
     <link rel="stylesheet" href="css/style.css">
     <title>Damanpreet E-portfolio</title>
 </head>
@@ -27,7 +33,7 @@
 
             <div class="sideNav" id="sideNav">
                 <i class="fa-solid fa-circle-xmark click close__btn" onclick="closeSideNav()"></i>
-                    <a href="#">About</a>
+                    <a href="#" onclick="toggleModal(); closeSideNav()">About</a>
                     <a href="#">Projects</a>
                     <a href="#">Contact</a>
                     <a href="#"><i class="fas fa-adjust" onclick="toggleDark()"></i></a>
@@ -100,7 +106,7 @@
                 <i class="fa-solid fa-circle-xmark click" onclick="toggleModal()"></i>
                 <h3 class="modal__title">Let's Talk!</h3>
                 <h4 class="modal__sub-title">I'm open to work. I would love to hear from you.</h4>
-                <form action="" id="contact__form">
+                <form action="" id="contact__form" onsubmit="Contact(event)">
                     <div class="form__item">
                         <label for="" class="form__item--label">Name</label>
                         <input type="text" class="input" name="sender_name" required>
@@ -151,8 +157,7 @@
                                     Created a website for my freelance client for their financial broker business as per client requirements.
                                 </p>
                                 <div class="project__links">
-                                    <a href="#"><i class="fa-brands fa-github"></i></a>
-                                    <a href="#"><i class="fa-solid fa-link"></i></a>
+                                    <a href="https://axionfinance.ca"><i class="fa-solid fa-link"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -168,8 +173,8 @@
                                     An ecommerce store with functional features such as sortby & add/update cart.
                                 </p>
                                 <div class="project__links">
-                                    <a href="#"><i class="fa-brands fa-github"></i></a>
-                                    <a href="#"><i class="fa-solid fa-link"></i></a>
+                                    <a href="https://github.com/damanpr33t/library-react"><i class="fa-brands fa-github"></i></a>
+                                    <!-- <a href="#"><i class="fa-solid fa-link"></i></a> -->
                                 </div>
                             </div>
                         </div>
@@ -185,8 +190,8 @@
                                     A website for fetching news using the open news API with features to search by name, date, title.
                                 </p>
                                 <div class="project__links">
-                                    <a href="#"><i class="fa-brands fa-github"></i></a>
-                                    <a href="#"><i class="fa-solid fa-link"></i></a>
+                                    <a href="https://github.com/damanpr33t/imdb-movie-api"><i class="fa-brands fa-github"></i></a>
+                                    <a href="https://damanpr33t.github.io/imdb-movie-api/#"><i class="fa-solid fa-link"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -202,8 +207,8 @@
                                     A website for fetching news using the open news API with features to search by name, date, title.
                                 </p>
                                 <div class="project__links">
-                                    <a href="#"><i class="fa-brands fa-github"></i></a>
-                                    <a href="#"><i class="fa-solid fa-link"></i></a>
+                                    <a href="https://github.com/damanpr33t/bitcoin-news-article-api"><i class="fa-brands fa-github"></i></a>
+                                    <!-- <a href="#"><i class="fa-solid fa-link"></i></a> -->
                                 </div>
                             </div>
                         </div>
@@ -213,14 +218,14 @@
                             <img src="./assets/projects/NewsAPI/img1.png" alt="project image" class="project__img">
                             <div class="project__description--bg"></div>
                             <div class="description">
-                                <h3 class="project__title">Crypto Daily News</h3>
-                                <h4 class="project__sub-title">HTML, CSS, Reactjs</h4>
+                                <h3 class="project__title">User Authentication & Goals</h3>
+                                <h4 class="project__sub-title">HTML, CSS, JavaScript, Reactjs, Redux, Express, MongoDB, Nodejs</h4>
                                 <p class="project__para">
-                                    A website for fetching news using the open news API with features to search by name, date, title.
+                                    Complete login and logout UI with user id and pass authentication. Set/update/retrieve/delete goals.
                                 </p>
                                 <div class="project__links">
-                                    <a href="#"><i class="fa-brands fa-github"></i></a>
-                                    <a href="#"><i class="fa-solid fa-link"></i></a>
+                                    <a href="https://github.com/damanpr33t/user-authentication"><i class="fa-brands fa-github"></i></a>
+                                    <!-- <a href="#"><i class="fa-solid fa-link"></i></a> -->
                                 </div>
                             </div>
                         </div>
@@ -230,14 +235,14 @@
                             <img src="./assets/projects/NewsAPI/img1.png" alt="project image" class="project__img">
                             <div class="project__description--bg"></div>
                             <div class="description">
-                                <h3 class="project__title">Crypto Daily News</h3>
-                                <h4 class="project__sub-title">HTML, CSS, Reactjs</h4>
+                                <h3 class="project__title">Crypto Exchange Rate</h3>
+                                <h4 class="project__sub-title">HTML, CSS, JavaScript</h4>
                                 <p class="project__para">
-                                    A website for fetching news using the open news API with features to search by name, date, title.
+                                    A website for fetching exchange rate of a crypto to crypto or fiat pair using the rapidAPI by Avalanche.
                                 </p>
                                 <div class="project__links">
-                                    <a href="#"><i class="fa-brands fa-github"></i></a>
-                                    <a href="#"><i class="fa-solid fa-link"></i></a>
+                                    <a href="https://github.com/damanpr33t/crypto-exchange-rate"><i class="fa-brands fa-github"></i></a>
+                                    <!-- <a href="#"><i class="fa-solid fa-link"></i></a> -->
                                 </div>
                             </div>
                         </div>

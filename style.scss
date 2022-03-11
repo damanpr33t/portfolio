@@ -54,11 +54,11 @@
 .dark-mode .header__title {
     text-shadow: 1px 2px rgba(0, 0, 0, 0.5);
 }
+.dark-mode .modal__about,
 .dark-mode #contact__form,
 .dark-mode .modal__contact {
     background-color: $light-color;
 }
-.dark-mode .modal__about,
 .dark-mode .sideNav,
 .dark-mode body,
 .dark-mode .container,

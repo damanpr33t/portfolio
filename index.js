@@ -110,15 +110,15 @@ function Contact(event) {
     event.preventDefault();
     const loading = document.querySelector('.modal__overlay--loading')
     const success = document.querySelector('.modal__overlay--success')
-    loading.classList.add('modal__overlay--visible')
-    emailjs.sendform(
+    loading.classList.add(' modal__overlay--visible')
+    emailjs.sendForm(
         'service_gd0vyta',
         'template_9jek4bq',
         event.target,
         'user_VqSnwwutoSTNCLs6RtQpW'
     ).then(() => {
         loading.classList.remove('modal__overlay--visible')
-        success.classList.add('modal__overlay--visible')
+        success.classList.add(' modal__overlay--visible')
     }).catch(() => {
         loading.classList.remove('modal__overlay--visible')
         alert(
