@@ -52,13 +52,14 @@ nav {
     }
 
     .fa-bars {
+        // Hide by default on large screens //
         display: none;
     }
 }
 // SideBar //
 .sideNav {
     height: 100%;
-    width: 0; // initial width set to 0 changed with JavaScript
+    width: 0; // initial width set to 0 changed with JavaScript //
     position: fixed;
     z-index: 100;
     top: 0;
@@ -66,13 +67,13 @@ nav {
     background-color: $background-color;
     overflow-x: hidden;
     padding-top: 6em;
-    transition: 0.5s ease;
+    transition: 0.5s ease; // Transition the width //
 }
 .sideNav a {
     padding: 1em;
     display: block;
     text-align: center;
-    transition: 0.3s ease;
+    transition: 0.3s ease; // Transition the underline animation //
 }
 .sideNav .close__btn {
     position: absolute;

@@ -1,5 +1,6 @@
 /* Landing Page Start */
 .mail__btn {
+    // Message Button fixed to bottom right
     width: 2em;
     height: 2em;
     font-size: 1.5em;
@@ -9,18 +10,18 @@
     position: fixed;
     bottom: 1em;
     right: 1.5em;
-    z-index: 100;
+    z-index: 100; 
     box-shadow: 0 12px 30px 0 rgba(0, 0, 0, 0.5);
+}
+.about {
+    cursor: pointer;
 }
 .click {
     cursor: pointer;
     transition: all 300ms ease;
 }
-.click:hover {
-    transform: scale(1.1);
-}
 .click:active {
-    transform: scale(0.8);
+    transform: scale(0.8); // shrink to 80% when clicked
 }
 #landing__page {
     min-height: 100vh;
@@ -36,6 +37,7 @@
 /* ------------------ */
 .header,
 .loading-text {
+    // Center Items
     position: absolute;
     top: 50%;
     left: 50%;
@@ -50,6 +52,7 @@
     text-shadow: 2px 2px rgba(255, 255, 255, 0.5);
     position: relative;
 
+    // Background Style for Title
     div {
         height: 1.75em;
         width: 2.75em;
@@ -70,6 +73,7 @@
     position: relative;
     padding-left: 14px;
 
+    // Background style for Name
     div {
         height: 1.75em;
         width: 4.75em;
@@ -113,6 +117,7 @@
     animation: scroll 2s infinite alternate-reverse;
 }
 @keyframes scroll {
+    // Move up and down 10px on y-axis
     0% {
         transform: translateY(10px);
     }

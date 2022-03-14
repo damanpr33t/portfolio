@@ -1,55 +1,66 @@
 // Select Items
 const slides = document.querySelectorAll('.slide')
-const nextBtn = document.querySelector('.fa-arrow-right')
-const prevBtn = document.querySelector('.fa-arrow-left')
 
 const projectsArr = {
     projectOne: [
-        img1 = './assets/projects/axion/img1.png',
-        img2 = './assets/projects/axion/img2.png',
-        img3 = './assets/projects/axion/img3.png', 
+        img0 = './assets/projects/axion/img1.png',
+        img1 = './assets/projects/axion/img2.png',
+        img2 = './assets/projects/axion/img3.png', 
+        img3 = './assets/projects/axion/img4.png', 
+        img4 = './assets/projects/axion/img5.png', 
     ],
 
     projectTwo: [
-        img1 = '',
-        img2 = '',
-        img3 = '',
+        img0 = './assets/projects/Library/img1.png',
+        img1 = './assets/projects/Library/img2.png',
+        img2 = './assets/projects/Library/img3.png',
+        img3 = './assets/projects/Library/img4.png',
+        img4 = './assets/projects/Library/img5.png',
     ],
 
     projectThree: [
-        img1 = '',
-        img2 = '',
-        img3 = '',
+        img0 = './assets/projects/MovieAPI/img1.png',
+        img1 = './assets/projects/MovieAPI/img2.png',
+        img2 = './assets/projects/MovieAPI/img3.png',
     ],
 
     projectFour: [
-        img1 = '',
-        img2 = '',
-        img3 = '',
+        img0 = './assets/projects/NewsAPI/img1.png',
     ],
 
     projectFive: [
-        img1 = '',
-        img2 = '',
-        img3 = '',
+        img0 = './assets/projects/Goals/img1.png',
+        img1 = './assets/projects/Goals/img2.png',
+        img2 = './assets/projects/Goals/img3.png',
     ],
 
     projectSix: [
-        img1 = '',
-        img2 = '',
-        img3 = '',
+        img0 = './assets/projects/Library/img1.png',
     ]
 }
 
 let i = 0;
-function Slides() {
-    const projectOneBackground = document.querySelector('.project__img')
-    projectOneBackground.src = projectsArr.projectOne.img[i]
+setInterval(() => {
+    const projectOneBackground = document.querySelector('.project__one')
+    const projectTwoBackground = document.querySelector('.project__two')
+    const projectThreeBackground = document.querySelector('.project__three')
+    const projectFourBackground = document.querySelector('.project__four')
+    const projectFiveBackground = document.querySelector('.project__five')
+    const projectSixBackground = document.querySelector('.project__six')
+
+    projectOneBackground.src = projectsArr.projectOne[i]
+    projectTwoBackground.src = projectsArr.projectTwo[i]
+    projectThreeBackground.src = projectsArr.projectThree[i]
+    projectFourBackground.src = projectsArr.projectFour[i]
+    projectFiveBackground.src = projectsArr.projectFive[i]
+    projectSixBackground.src = projectsArr.projectSix[i]
+
+
     i++
-    if(i > 3) {
+    if(i > 4) {
         i = 0;
     }
-}
+}, 3000)
 
 slides.forEach(function(slide, index) {
     slide.style.left = `${index * 100}%`
@@ -107,24 +118,34 @@ function toggleModal() {
 
 /* ========= Send email button on modal ========== */
 function Contact(event) {
-    event.preventDefault();
+    event.preventDefault(); 
+    // Select items
     const loading = document.querySelector('.modal__overlay--loading')
     const success = document.querySelector('.modal__overlay--success')
-    loading.classList.add(' modal__overlay--visible')
-    emailjs.sendForm(
-        'service_gd0vyta',
-        'template_9jek4bq',
-        event.target,
-        'user_VqSnwwutoSTNCLs6RtQpW'
-    ).then(() => {
-        loading.classList.remove('modal__overlay--visible')
-        success.classList.add(' modal__overlay--visible')
-    }).catch(() => {
-        loading.classList.remove('modal__overlay--visible')
-        alert(
-            "Apologies for the inconvenience. The email service is temporarily unavailable. Please contact me directly at daman0797@gmail.com"
-        )
-    })
+
+    // Add the visible class to loading div
+    loading.classList += ' modal__overlay--visible' 
+
+    setTimeout(() => {
+        emailjs.sendForm(
+            'service_gd0vyta',
+            'template_9jek4bq',
+            event.target,
+            'user_VqSnwwutoSTNCLs6RtQpW'
+        ).then(() => {
+            // Remove the visibility class from loading div
+            loading.classList.remove('modal__overlay--visible') 
+
+            // Add visibility class to the success div
+            success.classList += ' modal__overlay--visible' 
+        }).catch(() => {
+            // Catch error and Remove visibility class and display alert
+            loading.classList.remove('modal__overlay--visible') 
+            alert(
+                "Apologies for the inconvenience. The email service is temporarily unavailable. Please contact me directly at daman0797@gmail.com"
+            )
+        })
+    }, 150)
 }
 /* ====== Send Email End ============= */
 
@@ -136,14 +157,15 @@ function toggleDark() {
 
 /** Toggle Sidebar */
 function openSideNav() {
-    document.getElementById("sideNav").style.width = "100%";
+    // called by onclick from index.html
+    document.getElementById("sideNav").style.width = "100%"; 
 }
 
 function closeSideNav() {
-    document.getElementById("sideNav").style.width = "0";
+    // called by onclick from index.html
+    document.getElementById("sideNav").style.width = "0"; 
 }
 /** Toggle Sidebar End */
-
 
 // palindrome question 
 function palindrome(str) {

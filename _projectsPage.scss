@@ -1,7 +1,7 @@
 /* Projects Page Start */
 .project__wrapper {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Split columns into 1 fraction and repeat 3 times to get 3 columns */
+    grid-template-columns: repeat(3, 1fr); /* Column of 1fraction repeated 3 times to get 3 columns */
     grid-gap: 1.5em;
     grid-auto-rows: minmax(100px, auto); /* Min row height 100px and auto increase if needed */
     place-content: center;   
@@ -19,7 +19,7 @@
     transition: all 1000ms ease;
 }
 .project__description:hover .project__img {
-    // scale 7%
+    // scale up 7%
     transform: scale(1.07);
     filter: blur(5px);
 }
@@ -37,7 +37,7 @@
     position: absolute; // .project__description--wrapper
     top: 50%;
     transform: translateY(100%); // set text down lower as default
-    opacity: 0; // make invisible as default
+    opacity: 0; // make invisible by default
     transition: opacity 700ms ease-in-out, transform 700ms ease;
     text-align: center;
 }
