@@ -1,5 +1,5 @@
 // Select Items
-const slides = document.querySelectorAll('.slide')
+const slides = document.querySelectorAll('.project__img')
 
 const projectsArr = {
     projectOne: [
@@ -22,21 +22,23 @@ const projectsArr = {
         img0 = './assets/projects/MovieAPI/img1.png',
         img1 = './assets/projects/MovieAPI/img2.png',
         img2 = './assets/projects/MovieAPI/img3.png',
+        img2 = './assets/projects/MovieAPI/img4.png',
+        img2 = './assets/projects/MovieAPI/img5.png',
     ],
 
-    projectFour: [
-        img0 = './assets/projects/NewsAPI/img1.png',
-    ],
+    // projectFour: [
+    //     img0 = './assets/projects/NewsAPI/img1.png',
+    // ],
 
-    projectFive: [
-        img0 = './assets/projects/Goals/img1.png',
-        img1 = './assets/projects/Goals/img2.png',
-        img2 = './assets/projects/Goals/img3.png',
-    ],
+    // projectFive: [
+    //     img0 = './assets/projects/Goals/img1.png',
+    //     img1 = './assets/projects/Goals/img2.png',
+    //     img2 = './assets/projects/Goals/img3.png',
+    // ],
 
-    projectSix: [
-        img0 = './assets/projects/Library/img1.png',
-    ]
+    // projectSix: [
+    //     img0 = './assets/projects/Library/img1.png',
+    // ]
 }
 
 let i = 0;
@@ -44,16 +46,16 @@ setInterval(() => {
     const projectOneBackground = document.querySelector('.project__one')
     const projectTwoBackground = document.querySelector('.project__two')
     const projectThreeBackground = document.querySelector('.project__three')
-    const projectFourBackground = document.querySelector('.project__four')
-    const projectFiveBackground = document.querySelector('.project__five')
-    const projectSixBackground = document.querySelector('.project__six')
+    // const projectFourBackground = document.querySelector('.project__four')
+    // const projectFiveBackground = document.querySelector('.project__five')
+    // const projectSixBackground = document.querySelector('.project__six')
 
     projectOneBackground.src = projectsArr.projectOne[i]
     projectTwoBackground.src = projectsArr.projectTwo[i]
     projectThreeBackground.src = projectsArr.projectThree[i]
-    projectFourBackground.src = projectsArr.projectFour[i]
-    projectFiveBackground.src = projectsArr.projectFive[i]
-    projectSixBackground.src = projectsArr.projectSix[i]
+    // projectFourBackground.src = projectsArr.projectFour[i]
+    // projectFiveBackground.src = projectsArr.projectFive[i]
+    // projectSixBackground.src = projectsArr.projectSix[i]
 
 
     i++
