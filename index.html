@@ -14,6 +14,29 @@
     </script>
     <link rel="stylesheet" href="css/style.css">
     <title>Damanpreet E-portfolio</title>
+    <script>
+        // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDY1UrQVN49_vwDjoyK_DKdepr3IS0Z0YY",
+  authDomain: "portfolio-e33d5.firebaseapp.com",
+  projectId: "portfolio-e33d5",
+  storageBucket: "portfolio-e33d5.appspot.com",
+  messagingSenderId: "664426983240",
+  appId: "1:664426983240:web:60440bbc6c2414cc154d7d",
+  measurementId: "G-4MVRCSK2ZP"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+    </script>
 </head>
 <body>
     <span class="loading-text">0%</span>
@@ -169,7 +192,7 @@
                             <div class="project__description--bg"></div>
                             <div class="description">
                                 <h3 class="project__title">Axion Finance</h3>
-                                <h4 class="project__sub-title">HTML, CSS, Reactjs, Firebase</h4>
+                                <h4 class="project__sub-title">HTML, CSS, JavaScript, Reactjs, Firebase</h4>
                                 <p class="project__para">
                                     Created a website for my freelance client for their financial broker business as per client requirements.
                                 </p>
@@ -202,13 +225,13 @@
                             <div class="project__description--bg"></div>
                             <div class="description">
                                 <h3 class="project__title">Movie API</h3>
-                                <h4 class="project__sub-title">HTML, CSS, JavaScript</h4>
+                                <h4 class="project__sub-title">HTML, React-Bootstrap, JavaScript, ReactJS</h4>
                                 <p class="project__para">
-                                    A website for fetching news using the open news API with features to search by name, date, title.
+                                    A website for fetching movie data using the open movie database API with features to search by title & view details.
                                 </p>
                                 <div class="project__links">
-                                    <a href="https://github.com/damanpr33t/imdb-movie-api"><i class="fa-brands fa-github"></i></a>
-                                    <a href="https://damanpr33t.github.io/imdb-movie-api/#"><i class="fa-solid fa-link"></i></a>
+                                    <a href="https://github.com/damanpr33t/movie-api-react"><i class="fa-brands fa-github"></i></a>
+                                    <a href="https://main--magenta-flan-1e5635.netlify.app/"><i class="fa-solid fa-link"></i></a>
                                 </div>
                             </div>
                         </div>
