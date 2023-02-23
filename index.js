@@ -130,7 +130,7 @@ function Contact(event) {
 
     setTimeout(() => {
         emailjs.sendForm(
-            'service_gd0vyta',
+            'service_kjk1yxa',
             'template_9jek4bq',
             event.target,
             'user_VqSnwwutoSTNCLs6RtQpW'
